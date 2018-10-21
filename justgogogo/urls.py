@@ -32,6 +32,8 @@ from justapp.views import notifications
 from justapp.views import panels_wells
 from justapp.views import tables
 from justapp.views import typography
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('justadmin/', admin.site.urls),
     path('hello/', hello_world),
@@ -51,4 +53,4 @@ urlpatterns = [
     path('panels_wells/',panels_wells),
     path('tables/',tables),
     path('typography/',typography),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

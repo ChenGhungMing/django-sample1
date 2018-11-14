@@ -1,8 +1,8 @@
 import socket
 import sys
 import subprocess
-
 #function to get the ip address
+#print(data_1)
 def get_ip(ip):
     if len(sys.argv) == 2:
         ipaddress= socket.gethostbyname(ip)
@@ -18,5 +18,7 @@ def portscanner(ip):
     
 #main of the program
 def main():
+    #print(str_data_1)
     portscanner(get_ip(sys.argv[1]))
+    #print(len(sys.argv))
 main()

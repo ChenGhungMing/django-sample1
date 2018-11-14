@@ -382,17 +382,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">IP來源查詢</h1>
+                        <h1 class="page-header">端口掃描</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-1">
-                        <label for="exampleInputEmail1"><fonr size="5">域名輸入：</font></label>
+                        <label for="exampleInputEmail1"><fonr size="5">Domain Input：</font></label>
                     </div>
                     <div class="col-lg-8">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="www.com">
+                        <form action="/tools/Portscanner.py" method="get">
+                        <input type="text" name="data_1" placeholder="www.com">
                     </div>
                     <div class="col-lg-1">
                         <button type="button">Start!</button>

@@ -88,10 +88,6 @@ def views(request):
 
 class HomeView(TemplateView):
     template_name = 'hello_world.html'
-    
-    def get(self, request):
-        form = HomeForm()
-        return render(request, self.template_name, {'form': form})
 
     def post(self, request):
         form = HomeForm(request.POST)

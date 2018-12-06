@@ -16,43 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,re_path
 from justapp.views import hello_world
-from justapp.views import index
 from justapp.views import blank
 from justapp.views import blank1
 from justapp.views import blank2
 from justapp.views import blank3
-from justapp.views import buttons
-from justapp.views import flot
 from justapp.views import forms
-from justapp.views import grid
-from justapp.views import icons
-from justapp.views import login
-from justapp.views import morris
-from justapp.views import notifications
-from justapp.views import panels_wells
-from justapp.views import tables
-from justapp.views import typography
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('justadmin/', admin.site.urls),
     path('hello/', hello_world),
-    path('index/', index),
     path('blank/', blank),
     path('blank1/', blank1),
     path('blank2/',blank2),
     path('blank3/',blank3),
-    path('buttons/',buttons),
-    path('flot/',flot),
     path('forms/',forms),
-    path('grid/',grid),
-    path('icons/',icons),
-    path('login/',login),
-    path('morris/',morris),
-    path('notifications/',notifications),
-    path('panels_wells/',panels_wells),
-    path('tables/',tables),
-    path('typography/',typography),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -12,9 +12,39 @@
                 color: LightSeaGreen;
             }
         </style>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">漏洞偵測</h1>
+                    </div>
+
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                    <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                        <input type="text" name=text>
+                        <input type="submit" value="送出">
+                    </form>
+
+
+                <!-- /.row -->
+                <div class="row">
+                <div class="col-lg-12">
+                <h1>輸出：</h1>
+                </div>
+                    <div class="col-lg-12">
+                        <textarea class="col-lg-12" style="resize:none;height:400px;background-color:#666262" rows="4" cols="50">    
+                            {{ text }}
+                        </textarea>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </head>
     <body>
-        <h1>Hello Worlaaad!</h1>
-        <em>{{ current_time }}</em>
     </body>
 </html>

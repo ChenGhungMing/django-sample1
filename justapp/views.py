@@ -1,16 +1,9 @@
-# trips/views.py
-
-#from django.http import HttpResponse
-
-
-#def hello_world(request):
-        #return HttpResponse("Hello World!")
-
-# trips/views.py
-
 from datetime import datetime
-from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
+from justapp.forms import HomeForm
 
 def hello_world(request):
     return render(request, 'hello_world.html', {
@@ -81,3 +74,30 @@ def typography(request):
     return render(request, 'typography.html', {
         'current_time': str(datetime.now()),
     })
+
+def views(request):
+    return render(request, 'typography.html', {
+        'current_time': str(datetime.now()),
+    })
+#def post(request):
+#    if request.method == "POST":        #如果是以POST的方式才處理
+#       mess = request.POST['username'] #取得表單輸入資料
+#    else:
+#        mess = "表單資料尚未送出!"
+#    return render(request,"post.html",locals())
+
+class HomeView(TemplateView):
+    template_name = 'hello_world.html'
+    
+    def get(self, request):
+        form = HomeForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = HomeForm(request.POST)
+        if form.is_valid():
+            text = form.cleaned_data['post']
+            form = HomeForm()
+
+        args = {'form' :form, 'text' :text}
+        return render(request, self.template_name, args)

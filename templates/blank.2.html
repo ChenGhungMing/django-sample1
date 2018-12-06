@@ -389,15 +389,14 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-1">
-                        <label for="exampleInputEmail1"><fonr size="5">Domain Input：</font></label>
+                        <label for="exampleInputEmail1"><fonr size="5">Domain：</font></label>
                     </div>
                     <div class="col-lg-8">
-                        <form action="/home/ubuntu/django-sample/tools/backend_get.py" method="get">
-                        <input type="text" name="data_1" placeholder="www.com" />
-			<!-- <input type="button" value="start!" /> -->
+                        <form action="/tools/Portscanner.py" method="get">
+                        <input type="text" name="data_1" placeholder="www.com">
                     </div>
                     <div class="col-lg-1">
-			<input type="button" value="Start!">
+                        <button type="button">Start!</button>
                     </div>
                 </div>
                 <div class="row">
@@ -412,9 +411,15 @@
                 <h3>輸出</h3>
                 </div>
                     <div class="col-lg-12">
-                        <textarea class="col-lg-12" style="resize:none;height:400px;background-color:#666262;color:white"
+                        <textarea id="outputText" class="col-lg-12" style="resize:none;height:400px;background-color:#666262;color:white"
                          rows="4" cols="50">
                         </textarea>
+                        <script>
+                            var textarea = document.getElementById("inputText");
+                            function alphabetize() {
+                            textarea.value = textarea.value.split(" ").sort().join(" ")
+                            }
+                        </script>
                     </div>
                 </div>
             </div>

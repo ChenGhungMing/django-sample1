@@ -20,7 +20,7 @@ from justapp.views import blank
 from justapp.views import blank1
 from justapp.views import blank2
 from justapp.views import blank3
-from justapp.views import forms
+from justapp.views import index
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,5 +31,5 @@ urlpatterns = [
     path('blank1/', blank1),
     path('blank2/',blank2),
     path('blank3/',blank3),
-    path('forms/',forms),
+    path('', index),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -29,8 +29,8 @@ def blank3(request):
         'current_time': str(datetime.now()),
     })
 
-def forms(request):
-    return render(request, 'forms.html', {
+def index(request):
+    return render(request, 'index.html', {
         'current_time': str(datetime.now()),
     })
 

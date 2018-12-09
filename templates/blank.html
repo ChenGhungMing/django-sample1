@@ -98,7 +98,7 @@
                     <form method="post" action="/blank/">
                         {% csrf_token %}
                         {{ form.as_p }}
-                    <input type="text" name="text" class="form-control" placeholder="Please input domain name on here">
+                    <input type="text" name="ip" class="form-control" placeholder="Please input domain name on here">
                     <div class="col-lg-1"></div>
                     <input type="submit" value="Scanning">
                     </div>
@@ -114,7 +114,7 @@
                 </div>
                     <div class="col-lg-12">
                         <textarea class="col-lg-12" style="resize:none;height:400px;background-color:#666262;color:#FFFFFF" rows="4" cols="50">    
-                        {{ Text }}
+                        {{ OutPortScanner }}
                         </textarea>
                     </div>
                     

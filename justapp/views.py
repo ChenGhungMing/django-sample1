@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from justapp.forms import HomeForm
-from justapp.models import Hello
+from justapp.models import portScanner
 
 def hello_world(request):
     return render(request, 'hello_world.html', {
@@ -13,13 +13,18 @@ def hello_world(request):
 
 def blank(request):
 
-    text = Hello()
+    ip = ""
+    out = ""
 
     if request.POST:
-        text = request.POST["text"]
+        ip = request.POST["ip"]
+
+        if ip != "":
+            out = portScanner(ip)
+
 
     return render(request, 'blank.html', {
-        'current_time': str(datetime.now()),'Text':str(text)
+        'current_time': str(datetime.now()),'OutPortScanner':str(out)
     })
 
 def blank1(request):

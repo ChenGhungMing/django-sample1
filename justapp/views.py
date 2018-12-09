@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from justapp.forms import HomeForm
+from justapp.models import *
 
 def hello_world(request):
     return render(request, 'hello_world.html', {
@@ -11,8 +12,14 @@ def hello_world(request):
     })
 
 def blank(request):
+
+    text = Hello()
+
+    if request.POST:
+        text = request.POST["text"]
+
     return render(request, 'blank.html', {
-        'current_time': str(datetime.now()),
+        'current_time': str(datetime.now()),'Text':str(text)
     })
 
 def blank1(request):

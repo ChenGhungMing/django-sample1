@@ -95,10 +95,10 @@
                             <label for="exampleInputEmail1"><fonr size="8">Domain：</font></label>
                     </div>
                     <div class="col-lg-8">
-                    <form method="post">
+                    <form method="post" action="/blank/">
                         {% csrf_token %}
                         {{ form.as_p }}
-                    <input type="text" name=text class="form-control" placeholder="Please input domain name on here">
+                    <input type="text" name="text" class="form-control" placeholder="Please input domain name on here" value="Test">
                     <div class="col-lg-1"></div>
                     <input type="submit" value="Scanning">
                     </div>
@@ -113,7 +113,8 @@
                 <h1>輸出</h1>
                 </div>
                     <div class="col-lg-12">
-                        <textarea class="col-lg-12" style="resize:none;height:400px;background-color:#666262" rows="4" cols="50">    
+                        <textarea class="col-lg-12" style="resize:none;height:400px;background-color:#666262;color:#FFFFFF" rows="4" cols="50">    
+                        {{ Text }}
                         </textarea>
                     </div>
                     
